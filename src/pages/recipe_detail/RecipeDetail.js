@@ -1,22 +1,22 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { ServiceGet, API_DATA_PRODUCT } from '../../config/service';
+import { ServiceGet, API_DATA_RECIPE } from '../../config/service';
 
-class ProductDetail extends React.Component{
+class RecipeDetail extends React.Component{
 
 	constructor(props){
 		super(props)
 		this.state = {
-			producto:{
+			receta:{
 				strMeal:'',
 			}
 		}
 	}
 
 	componentWillMount(){
-		let producto = this.props.match.params.slug;
-		ServiceGet(API_DATA_PRODUCT+producto,'',this.getProduct);
+		let receta = this.props.match.params.slug;
+		ServiceGet(API_DATA_RECIPE+receta,'',this.getProduct);
 	}
 
 	componentDidMount(){
@@ -24,25 +24,24 @@ class ProductDetail extends React.Component{
 	}
 
 	getProduct = (data) =>{
-		const producto = data.meals;
-		producto.map((item,index) =>{
-			this.setState({producto:item})
+		const receta = data.meals;
+		receta.map((item,index) =>{
+			this.setState({receta:item})
 		});
 	}
 
 	render(){
-		//console.log(this.state.producto)
 		return(
 			<div id="recipe_detail">
 				<Helmet>
-					<title>Tendeos :: detalle de {this.state.producto.strMeal}</title>
+					<title>Recetas :: detalle de {this.state.receta.strMeal}</title>
 				</Helmet>
 				<nav>
 					<div className="container">
 						<div className="nav-wrapper">
 							<Link className="brand-logo" to="/"><i className="material-icons">keyboard_arrow_left</i> Volver</Link>
 							<ul id="nav-mobile" className="right hide-on-med-and-down">
-								<li>{this.state.producto.strMeal}</li>
+								<li>{this.state.receta.strMeal}</li>
 							</ul>
 						</div>
 					</div>
@@ -58,4 +57,4 @@ class ProductDetail extends React.Component{
 }
 
 
-export default ProductDetail
+export default RecipeDetail

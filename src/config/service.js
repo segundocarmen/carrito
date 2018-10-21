@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let API_DATA = 'https://www.themealdb.com/api/json/v1/1/latest.php';
-let API_DATA_PRODUCT = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
+let API_DATA_RECIPE = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 let ServiceGet = (url,data,callback) =>{
 	axios.get(url,{ params: data })
@@ -34,6 +34,6 @@ export{
  	ServiceGet,
  	ServicePost,
  	API_DATA,
- 	API_DATA_PRODUCT
+ 	API_DATA_RECIPE
 }
 
