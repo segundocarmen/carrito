@@ -32,11 +32,11 @@ class Recipes extends React.Component{
 			recetas.map((item,index) =>{
 				const ruta = "/receta/"+item.idMeal
 				return(
-					<Link to={ruta}>
-						<div key={item.idMeal} className="col s12 m4">
+					<Link key={item.idMeal} to={ruta}>
+						<div className="col s12 m4">
 							<div className="card">
 								<div className="card-image">
-									<img className="responsive-img imgProd" src={item.strMealThumb} />
+									<img className="responsive-img imgProd" src={item.strMealThumb} alt={item.strMeal} />
 									<span className="card-title">{item.strMeal}</span>
 									<button className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></button>
 								</div>
@@ -57,18 +57,18 @@ class Recipes extends React.Component{
 
 	render(){
 		return(
-			<div>
-			<Helmet>
-				<title>Recetas :: Lista de recetas</title>
-			</Helmet>
+			<div id="recipes">
+				<Helmet>
+					<title>Recetas :: Lista de recetas</title>
+				</Helmet>
 				<div>
 					<nav>
 						<div className="nav-wrapper container">
-							<a href="#" className="brand-logo">Mi tienda</a>
+							<p className="brand-logo">Recetas</p>
 							<ul  className="right section">
-								<a href="#" className="sidenav-trigger iconSidenav" data-target="menu-side">
+								<button className="sidenav-trigger iconSidenav red lighten-2" data-target="menu-side">
 									<i className="material-icons">menu</i>
-								</a>
+								</button>
 							</ul>
 							
 						</div>
@@ -83,40 +83,40 @@ class Recipes extends React.Component{
 								<div className="background">
 									<img className="responsive-img" src="https://st2.depositphotos.com/2430115/11217/i/950/depositphotos_112175240-stock-photo-supermarket-with-blurred-bokeh-background.jpg" alt="" />
 								</div>
-								<a href="#">
+								<Link to="/">
 									<img className="circle" src="http://eltoper.com/wp-content/uploads/2016/08/ok.jpg" alt="" />
-								</a>
-								<a href="">
+								</Link>
+								<Link to="/">
 									<span className="name black-text">John Falcón</span>
-								</a>
-								<a href="">
+								</Link>
+								<Link to="/">
 									<span className="email black-text">jfalcon910@gmail.com</span>
-								</a>
+								</Link>
 							</div>
 						</li>
 						<li>
-							<a href="">
+							<Link to="/">
 								<i className="material-icons">cloud</i>
 								Primer Elemento
-							</a>
+							</Link>
 						</li>
 						<li>
 							<div className="divider"></div>
 						</li>
 						<li>
-							<a href="">
+							<Link to="/">
 								<i className="material-icons">cloud</i>
 								Segundo Elemento
-							</a>
+							</Link>
 						</li>
 						<li>
 							<div className="divider"></div>
 						</li>
 						<li>
-							<a href="">
+							<Link to="/">
 								<i className="material-icons">cloud</i>
 								Tercer Elemento
-							</a>
+							</Link>
 						</li>
 					</ul>
 					<h3 className="center-align">Productos</h3>

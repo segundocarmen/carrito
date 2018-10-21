@@ -21,3 +21,6 @@ h1{
 	width: auto !important;
 	margin: 0 auto !important;
 }
+#recipes p{
+	margin: 0;
+}
