@@ -11,10 +11,11 @@ h1{
 	border-radius: 50%;
     border: 1px solid white;
 }
-.iconSidenav i {
+#recipes  .iconSidenav i {
 	height: auto !important;
 	width: auto !important;
 	line-height: initial !important;
+	color: #fff !important;
 }
 .imgProd{
 	max-width: 100% !important;

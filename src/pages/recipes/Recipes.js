@@ -32,11 +32,13 @@ class Recipes extends React.Component{
 			recetas.map((item,index) =>{
 				const ruta = "/receta/"+item.idMeal
 				return(
-					<Link key={item.idMeal} to={ruta}>
-						<div className="col s12 m4">
+					
+						<div key={item.idMeal} className="col s12 m4">
 							<div className="card">
 								<div className="card-image">
-									<img className="responsive-img imgProd" src={item.strMealThumb} alt={item.strMeal} />
+									<Link  to={ruta}>
+										<img className="responsive-img imgProd" src={item.strMealThumb} alt={item.strMeal} />
+									</Link>
 									<span className="card-title">{item.strMeal}</span>
 									<button className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></button>
 								</div>
@@ -49,7 +51,7 @@ class Recipes extends React.Component{
 								</div>
 							</div>
 						</div>
-					</Link>
+					
 				)
 			})
 		)
