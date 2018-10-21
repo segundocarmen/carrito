@@ -40,7 +40,7 @@ class Recipes extends React.Component{
 										<img className="responsive-img imgProd" src={item.strMealThumb} alt={item.strMeal} />
 									</Link>
 									<span className="card-title">{item.strMeal}</span>
-									<button className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></button>
+									<button className="btn-floating halfway-fab waves-effect waves-light red pulse"><i className="material-icons">add</i></button>
 								</div>
 								<div className="card-content">
 									<p>

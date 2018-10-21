@@ -30,11 +30,16 @@ class RecipeDetail extends React.Component{
 		});
 	}
 
+	sendComentaries = (event) =>{
+		event.preventDefault();
+	}
+
 	render(){
 		return(
 			<div id="recipe_detail">
 				<Helmet>
 					<title>Recetas :: detalle de {this.state.receta.strMeal}</title>
+					<meta name="description" content={this.state.receta.strMeal} />
 				</Helmet>
 				<nav>
 					<div className="container">
@@ -48,7 +53,62 @@ class RecipeDetail extends React.Component{
 				</nav>
 				<div id="recipe_data">
 					<div className="container">
-						
+						<div className="row">
+							<div className="col s12 m8">
+								<h5>Detalle de la receta</h5>
+								<div className="card large">
+									<div className="card-image">
+										<img src={this.state.receta.strMealThumb} alt={this.state.receta.strMeal} />
+										<span className="card-title">{this.state.receta.strMeal}</span>
+									</div>
+									<div className="card-content">
+										{this.state.receta.strInstructions}
+									</div>
+								</div>
+							</div>
+							<div className="col col s12 m8">
+								<br></br>
+								<p className="caption">Comentarios</p>
+								<div className="row">
+									<form className="col s12" onSubmit={this.sendComentaries}>
+										<div className="row">
+											 <div className="input-field col s6">
+												<i className="material-icons prefix">mode_edit</i>
+												<textarea placeholder="Comentarios" id="icon_prefix2" className="materialize-textarea"></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div className="col col s12 m8">
+								<ul className="collection">
+									<li className="collection-item avatar">
+										<i className="material-icons circle">folder</i>
+										<span className="title">Title</span>
+										<p>First Line <br/>Second Line</p>
+										<button className="secondary-content"><i className="material-icons">grade</i></button>
+									</li>
+									<li className="collection-item avatar">
+										<i className="material-icons circle">folder</i>
+										<span className="title">Title</span>
+										<p>First Line <br/>Second Line</p>
+										<button className="secondary-content"><i className="material-icons">grade</i></button>
+									</li>
+									<li className="collection-item avatar">
+										<i className="material-icons circle">folder</i>
+										<span className="title">Title</span>
+										<p>First Line <br/>Second Line</p>
+										<button className="secondary-content"><i className="material-icons">grade</i></button>
+									</li>
+									<li className="collection-item avatar">
+										<i className="material-icons circle">folder</i>
+										<span className="title">Title</span>
+										<p>First Line <br/>Second Line</p>
+										<button className="secondary-content"><i className="material-icons">grade</i></button>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>			
 				</div>
 			</div>
