@@ -3,13 +3,13 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 //components
 import RecipeDetail from '../pages/recipe_detail/RecipeDetail';
-import Products from '../pages/products/Products';
+import Recipes from '../pages/recipes/Recipes';
 
 const AppRoutes = () =>
 	<div id="application">
 		<Switch>
-			<Route exact path="/" component={Products} />
-			<Route exact path="/recetas" component={Products} />
+			<Route exact path="/" component={Recipes} />
+			<Route exact path="/recetas" component={Recipes} />
 			<Route exact path="/receta/:slug" component={RecipeDetail} />
 			<Redirect from="/receta" to="/"/>
 		</Switch>
