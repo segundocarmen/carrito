@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 //components
 import ProductDetail from '../pages/product_detail/ProductDetail';
@@ -10,7 +10,8 @@ const AppRoutes = () =>
 		<Switch>
 			<Route exact path="/" component={Products} />
 			<Route exact path="/productos" component={Products} />
-			<Route exact path="/producto/{id}" component={ProductDetail} />
+			<Route exact path="/producto/:slug" component={ProductDetail} />
+			<Redirect from="/producto" to="/"/>
 		</Switch>
 	</div>
 
